@@ -6,7 +6,7 @@
 
 ### Global Routing
 
-- [`AGENTS.md`](/Users/vk/webVK/ai-code-template/AGENTS.md)
+- [`AGENTS.md`](/ai-code-template/AGENTS.md)
 
 Это не skill и не agent.
 Это общий routing layer:
@@ -64,12 +64,12 @@ Frontend / React / UI best practices приходят из внешних skill 
 
 Локальные skills живут в этом репозитории и покрывают то, что не хочется отдавать внешним пакетам:
 
-- [`using-superpowers`](/Users/vk/webVK/ai-code-template/skills/using-superpowers/SKILL.md)
-- [`architecture-review`](/Users/vk/webVK/ai-code-template/skills/architecture-review/SKILL.md)
-- [`security-review`](/Users/vk/webVK/ai-code-template/skills/security-review/SKILL.md)
-- [`clean-code-review`](/Users/vk/webVK/ai-code-template/skills/clean-code-review/SKILL.md)
-- [`code-review`](/Users/vk/webVK/ai-code-template/skills/code-review/SKILL.md)
-- [`cto-advisor`](/Users/vk/webVK/ai-code-template/skills/cto-advisor/SKILL.md)
+- [`using-superpowers`](/ai-code-template/skills/using-superpowers/SKILL.md)
+- [`architecture-review`](/ai-code-template/skills/architecture-review/SKILL.md)
+- [`security-review`](/ai-code-template/skills/security-review/SKILL.md)
+- [`clean-code-review`](/ai-code-template/skills/clean-code-review/SKILL.md)
+- [`code-review`](/ai-code-template/skills/code-review/SKILL.md)
+- [`cto-advisor`](/ai-code-template/skills/cto-advisor/SKILL.md)
 
 Их роль:
 
@@ -82,15 +82,15 @@ Frontend / React / UI best practices приходят из внешних skill 
 
 ### Local Agents
 
-Локальные agents живут в [`agents/`](/Users/vk/webVK/ai-code-template/agents) и нужны только для bounded autonomous work.
+Локальные agents живут в [`agents/`](/ai-code-template/agents) и нужны только для bounded autonomous work.
 
 Актуальные агенты:
 
-- [`code-reviewer`](/Users/vk/webVK/ai-code-template/agents/code-reviewer.md)
-- [`architect-review`](/Users/vk/webVK/ai-code-template/agents/architect-review.md)
-- [`security-auditor`](/Users/vk/webVK/ai-code-template/agents/security-auditor.md)
-- [`documentation-expert`](/Users/vk/webVK/ai-code-template/agents/documentation-expert.md)
-- [`api-documenter`](/Users/vk/webVK/ai-code-template/agents/api-documenter.md)
+- [`code-reviewer`](/ai-code-template/agents/code-reviewer.md)
+- [`architect-review`](/ai-code-template/agents/architect-review.md)
+- [`security-auditor`](/ai-code-template/agents/security-auditor.md)
+- [`documentation-expert`](/ai-code-template/agents/documentation-expert.md)
+- [`api-documenter`](/ai-code-template/agents/api-documenter.md)
 
 Их роль:
 
@@ -216,10 +216,10 @@ Review в этом проекте разбит на три части:
    - `superpowers:receiving-code-review`
 
 2. Reviewer:
-   - [`agents/code-reviewer.md`](/Users/vk/webVK/ai-code-template/agents/code-reviewer.md)
+   - [`agents/code-reviewer.md`](/ai-code-template/agents/code-reviewer.md)
 
 3. Local quality bar:
-   - [`skills/code-review/SKILL.md`](/Users/vk/webVK/ai-code-template/skills/code-review/SKILL.md)
+   - [`skills/code-review/SKILL.md`](/ai-code-template/skills/code-review/SKILL.md)
 
 Если review касается React / UI:
 

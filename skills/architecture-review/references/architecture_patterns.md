@@ -1,103 +1,23 @@
 # Architecture Patterns
 
-## Overview
+## Feature-First Layers
 
-This reference guide provides comprehensive information for senior architect.
+- `app`: composition root, providers, routing, runtime setup.
+- `pages` or `screens`: route-level entry points.
+- `widgets`: larger UI compositions built from features and shared UI.
+- `features`: user workflows and domain-specific behavior.
+- `entities`: stable domain objects shared by multiple features, when the repo uses this layer.
+- `shared`: low-level primitives, API clients, config, constants, and reusable UI.
 
-## Patterns and Practices
+## Good Boundaries
 
-### Pattern 1: Best Practice Implementation
+- A feature can be understood from its public exports and nearby `ui`, `lib`, and `model` folders.
+- Shared modules do not import app, page, widget, feature, or entity code.
+- Cross-feature communication happens through explicit public APIs, route params, query cache, or a shared domain layer.
+- Generated clients and route trees have a clear source generator.
 
-**Description:**
-Detailed explanation of the pattern.
+## Trade-Offs
 
-**When to Use:**
-- Scenario 1
-- Scenario 2
-- Scenario 3
-
-**Implementation:**
-```typescript
-// Example code implementation
-export class Example {
-  // Implementation details
-}
-```
-
-**Benefits:**
-- Benefit 1
-- Benefit 2
-- Benefit 3
-
-**Trade-offs:**
-- Consider 1
-- Consider 2
-- Consider 3
-
-### Pattern 2: Advanced Technique
-
-**Description:**
-Another important pattern for senior architect.
-
-**Implementation:**
-```typescript
-// Advanced example
-async function advancedExample() {
-  // Code here
-}
-```
-
-## Guidelines
-
-### Code Organization
-- Clear structure
-- Logical separation
-- Consistent naming
-- Proper documentation
-
-### Performance Considerations
-- Optimization strategies
-- Bottleneck identification
-- Monitoring approaches
-- Scaling techniques
-
-### Security Best Practices
-- Input validation
-- Authentication
-- Authorization
-- Data protection
-
-## Common Patterns
-
-### Pattern A
-Implementation details and examples.
-
-### Pattern B
-Implementation details and examples.
-
-### Pattern C
-Implementation details and examples.
-
-## Anti-Patterns to Avoid
-
-### Anti-Pattern 1
-What not to do and why.
-
-### Anti-Pattern 2
-What not to do and why.
-
-## Tools and Resources
-
-### Recommended Tools
-- Tool 1: Purpose
-- Tool 2: Purpose
-- Tool 3: Purpose
-
-### Further Reading
-- Resource 1
-- Resource 2
-- Resource 3
-
-## Conclusion
-
-Key takeaways for using this reference guide effectively.
+- Keeping logic in a feature is cheaper until another real consumer appears.
+- Moving logic to `shared` reduces duplication only when ownership remains clear.
+- Adding a domain layer is useful for stable concepts, but harmful for one-off screen state.

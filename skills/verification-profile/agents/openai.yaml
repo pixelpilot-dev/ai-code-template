@@ -1,0 +1,4 @@
+interface:
+  display_name: "Verification Profile"
+  short_description: "Pick a minimal verification command"
+  default_prompt: "Use $verification-profile to choose the lightest defensible verification for these changes."

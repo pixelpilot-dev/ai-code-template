@@ -1,103 +1,28 @@
 # Coding Standards
 
-## Overview
+## General
 
-This reference guide provides comprehensive information for code reviewer.
+- Prefer TypeScript types over `any`; tolerate existing `any` only when replacing it is outside scope.
+- Use repo aliases and import ordering rules already configured in ESLint.
+- Keep comments for non-obvious decisions, not line-by-line narration.
+- Keep formatting delegated to Prettier or the repo formatter.
+- For JS/TS-specific behavior, use `skills/js-ts-quality/references/writing-code.md`.
 
-## Patterns and Practices
+## Boundaries
 
-### Pattern 1: Best Practice Implementation
+- Put reusable primitives in `shared/ui`, not domain components.
+- Put domain-specific UI in the owning feature, widget, page, or screen.
+- Put API clients and generated API adapters in the existing API layer.
+- Keep route constants and typed params in the existing navigation layer.
 
-**Description:**
-Detailed explanation of the pattern.
+## Hooks And Data
 
-**When to Use:**
-- Scenario 1
-- Scenario 2
-- Scenario 3
+- Custom hooks should own one coherent concern.
+- Query hooks should expose stable query keys or use existing query key conventions.
+- Mutations should make cache updates explicit.
+- Avoid effects that synchronize data that can be derived during render.
 
-**Implementation:**
-```typescript
-// Example code implementation
-export class Example {
-  // Implementation details
-}
-```
+## Verification
 
-**Benefits:**
-- Benefit 1
-- Benefit 2
-- Benefit 3
-
-**Trade-offs:**
-- Consider 1
-- Consider 2
-- Consider 3
-
-### Pattern 2: Advanced Technique
-
-**Description:**
-Another important pattern for code reviewer.
-
-**Implementation:**
-```typescript
-// Advanced example
-async function advancedExample() {
-  // Code here
-}
-```
-
-## Guidelines
-
-### Code Organization
-- Clear structure
-- Logical separation
-- Consistent naming
-- Proper documentation
-
-### Performance Considerations
-- Optimization strategies
-- Bottleneck identification
-- Monitoring approaches
-- Scaling techniques
-
-### Security Best Practices
-- Input validation
-- Authentication
-- Authorization
-- Data protection
-
-## Common Patterns
-
-### Pattern A
-Implementation details and examples.
-
-### Pattern B
-Implementation details and examples.
-
-### Pattern C
-Implementation details and examples.
-
-## Anti-Patterns to Avoid
-
-### Anti-Pattern 1
-What not to do and why.
-
-### Anti-Pattern 2
-What not to do and why.
-
-## Tools and Resources
-
-### Recommended Tools
-- Tool 1: Purpose
-- Tool 2: Purpose
-- Tool 3: Purpose
-
-### Further Reading
-- Resource 1
-- Resource 2
-- Resource 3
-
-## Conclusion
-
-Key takeaways for using this reference guide effectively.
+- Use the repo's scripts rather than inventing shell commands.
+- Do not add new tests by default; run or update existing tests only when they already cover the changed behavior or the user requested tests.

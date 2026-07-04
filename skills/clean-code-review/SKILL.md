@@ -24,6 +24,7 @@ description: Use to review readability, cohesion, naming, and local simplicity b
 3. Remove duplication and excess abstraction only where it materially reduces complexity.
 4. Check names, function size, nesting, and cohesion in nearby code.
 5. Do not refactor outside the current task unless there is a clear benefit.
+6. For JavaScript and TypeScript, use `js-ts-quality` to check function purity, side-effect boundaries, type clarity, and overengineering risk.
 
 ## Red flags
 
@@ -42,3 +43,4 @@ description: Use to review readability, cohesion, naming, and local simplicity b
 ## References
 
 - `skills/code-review/references/common_antipatterns.md`
+- `skills/js-ts-quality/references/refactoring.md`

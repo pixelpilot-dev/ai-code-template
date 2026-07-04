@@ -18,6 +18,7 @@ description: Use as the local review quality bar and findings format, while the 
 - Use local `agents/code-reviewer.md` as the reviewer.
 - Use `superpowers:receiving-code-review` when handling review feedback.
 - Use this skill as the local standard for what a good review should look like.
+- For JavaScript and TypeScript code review, use `js-ts-quality` to calibrate readability, type safety, side effects, and overengineering.
 - For React, Next.js, and UI code review, consult `vercel-react-best-practices` and `vercel-composition-patterns`.
 - Add `vercel-react-view-transitions` when reviewing transitions or motion behavior.
 - Use `web-design-guidelines` for UI/accessibility/design audits when that angle is part of the review.
@@ -48,3 +49,4 @@ description: Use as the local review quality bar and findings format, while the 
 - `skills/code-review/references/code_review_checklist.md`
 - `skills/code-review/references/common_antipatterns.md`
 - `skills/code-review/references/coding_standards.md`
+- `skills/js-ts-quality/references/reviewing-ai-code.md`

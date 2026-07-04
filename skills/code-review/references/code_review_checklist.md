@@ -1,103 +1,30 @@
 # Code Review Checklist
 
-## Overview
+Use this as a risk checklist, not as a template for long review notes.
 
-This reference guide provides comprehensive information for code reviewer.
+## Order
 
-## Patterns and Practices
+1. Correctness: does the changed behavior work for normal, empty, loading, and error states?
+2. Regressions: did public contracts, routing, data ownership, or generated outputs change?
+3. Security: did the change touch auth, permissions, user input, files, secrets, logs, or external integrations?
+4. Verification: is there a command or existing test that actually covers the changed behavior?
+5. Maintainability: is the code easier to change locally without creating a shared dumping ground?
 
-### Pattern 1: Best Practice Implementation
+## Frontend Checks
 
-**Description:**
-Detailed explanation of the pattern.
+- Data fetching should keep server state in TanStack Query or the repo's existing data layer.
+- Mutations should invalidate or update the specific affected cache entries.
+- Route files and screens should stay thin when the repo has feature/widget layers.
+- Shared UI should remain domain-agnostic.
+- Generated files should not be edited by hand unless generation is unavailable and the reason is stated.
 
-**When to Use:**
-- Scenario 1
-- Scenario 2
-- Scenario 3
+## Review Output
 
-**Implementation:**
-```typescript
-// Example code implementation
-export class Example {
-  // Implementation details
-}
-```
+Lead with findings. Each finding needs:
 
-**Benefits:**
-- Benefit 1
-- Benefit 2
-- Benefit 3
+- priority
+- file and line
+- concrete risk
+- concrete fix or direction
 
-**Trade-offs:**
-- Consider 1
-- Consider 2
-- Consider 3
-
-### Pattern 2: Advanced Technique
-
-**Description:**
-Another important pattern for code reviewer.
-
-**Implementation:**
-```typescript
-// Advanced example
-async function advancedExample() {
-  // Code here
-}
-```
-
-## Guidelines
-
-### Code Organization
-- Clear structure
-- Logical separation
-- Consistent naming
-- Proper documentation
-
-### Performance Considerations
-- Optimization strategies
-- Bottleneck identification
-- Monitoring approaches
-- Scaling techniques
-
-### Security Best Practices
-- Input validation
-- Authentication
-- Authorization
-- Data protection
-
-## Common Patterns
-
-### Pattern A
-Implementation details and examples.
-
-### Pattern B
-Implementation details and examples.
-
-### Pattern C
-Implementation details and examples.
-
-## Anti-Patterns to Avoid
-
-### Anti-Pattern 1
-What not to do and why.
-
-### Anti-Pattern 2
-What not to do and why.
-
-## Tools and Resources
-
-### Recommended Tools
-- Tool 1: Purpose
-- Tool 2: Purpose
-- Tool 3: Purpose
-
-### Further Reading
-- Resource 1
-- Resource 2
-- Resource 3
-
-## Conclusion
-
-Key takeaways for using this reference guide effectively.
+If there are no actionable issues, say that and list residual risks or missing verification.

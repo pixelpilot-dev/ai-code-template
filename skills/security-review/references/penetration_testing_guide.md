@@ -1,103 +1,27 @@
 # Penetration Testing Guide
 
-## Overview
+Use this only when the user asks for security validation beyond static review.
 
-This reference guide provides comprehensive information for senior security.
+## Static First
 
-## Patterns and Practices
+Before dynamic probing, identify:
 
-### Pattern 1: Best Practice Implementation
+- the target flow
+- allowed environment
+- test account boundaries
+- data that must not be modified
+- commands or tools that need approval
 
-**Description:**
-Detailed explanation of the pattern.
+## Manual Checks
 
-**When to Use:**
-- Scenario 1
-- Scenario 2
-- Scenario 3
+- Try unauthenticated access to protected routes and API calls.
+- Try cross-user or cross-tenant identifiers in route params and API payloads.
+- Try malformed file uploads, oversized payloads, and unsupported extensions.
+- Check whether logout clears sensitive cache and local storage.
+- Check whether deep links or external links can redirect to unsafe targets.
 
-**Implementation:**
-```typescript
-// Example code implementation
-export class Example {
-  // Implementation details
-}
-```
+## Safety
 
-**Benefits:**
-- Benefit 1
-- Benefit 2
-- Benefit 3
-
-**Trade-offs:**
-- Consider 1
-- Consider 2
-- Consider 3
-
-### Pattern 2: Advanced Technique
-
-**Description:**
-Another important pattern for senior security.
-
-**Implementation:**
-```typescript
-// Advanced example
-async function advancedExample() {
-  // Code here
-}
-```
-
-## Guidelines
-
-### Code Organization
-- Clear structure
-- Logical separation
-- Consistent naming
-- Proper documentation
-
-### Performance Considerations
-- Optimization strategies
-- Bottleneck identification
-- Monitoring approaches
-- Scaling techniques
-
-### Security Best Practices
-- Input validation
-- Authentication
-- Authorization
-- Data protection
-
-## Common Patterns
-
-### Pattern A
-Implementation details and examples.
-
-### Pattern B
-Implementation details and examples.
-
-### Pattern C
-Implementation details and examples.
-
-## Anti-Patterns to Avoid
-
-### Anti-Pattern 1
-What not to do and why.
-
-### Anti-Pattern 2
-What not to do and why.
-
-## Tools and Resources
-
-### Recommended Tools
-- Tool 1: Purpose
-- Tool 2: Purpose
-- Tool 3: Purpose
-
-### Further Reading
-- Resource 1
-- Resource 2
-- Resource 3
-
-## Conclusion
-
-Key takeaways for using this reference guide effectively.
+- Do not attack production or third-party systems without explicit approval.
+- Do not brute force, fuzz aggressively, or run scanners unless explicitly authorized.
+- Report exact request/response evidence when available, but redact secrets and personal data.

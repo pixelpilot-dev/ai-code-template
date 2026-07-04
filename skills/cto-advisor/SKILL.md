@@ -28,7 +28,7 @@ description: Use for technology leadership, engineering strategy, tech debt prio
 3. Separate immediate decisions from longer-term policy or operating model changes.
 4. Recommend 2-3 viable options with trade-offs and a clear recommendation.
 5. Keep outputs practical: memo, roadmap slice, ADR outline, prioritization list, hiring/scaling note, or metrics proposal.
-6. Use local references and scripts only when they materially improve the answer.
+6. Use local references only when they materially improve the answer.
 
 ## Good outputs
 
@@ -42,6 +42,7 @@ description: Use for technology leadership, engineering strategy, tech debt prio
 ## Guardrails
 
 - do not invent executive process or numbers without a basis
+- do not present score calculators or weighted formulas as evidence unless the user supplied the inputs and accepted the model
 - distinguish opinion, assumption, and evidence
 - prefer decision clarity over management jargon
 - keep recommendations grounded in delivery, risk, and team capacity
@@ -51,8 +52,3 @@ description: Use for technology leadership, engineering strategy, tech debt prio
 - `skills/cto-advisor/references/architecture_decision_records.md`
 - `skills/cto-advisor/references/engineering_metrics.md`
 - `skills/cto-advisor/references/technology_evaluation_framework.md`
-
-## Optional tools
-
-- `skills/cto-advisor/scripts/tech_debt_analyzer.py`
-- `skills/cto-advisor/scripts/team_scaling_calculator.py`

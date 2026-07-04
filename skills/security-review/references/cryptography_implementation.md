@@ -1,103 +1,22 @@
 # Cryptography Implementation
 
-## Overview
+## Defaults
 
-This reference guide provides comprehensive information for senior security.
+- Do not design custom crypto.
+- Prefer platform libraries and established app primitives already used by the repo.
+- Keep secrets out of source, generated clients, logs, crash reports, and public config.
+- Treat client-side encryption as exposure reduction, not as authorization.
 
-## Patterns and Practices
+## Frontend And Mobile
 
-### Pattern 1: Best Practice Implementation
+- Web tokens should use the repo's existing session storage and refresh strategy.
+- Mobile sensitive values should use secure platform storage when available.
+- Do not store long-lived access tokens in plain AsyncStorage/MMKV unless the existing risk is explicitly accepted.
+- Do not log tokens, authorization headers, signed URLs, one-time codes, or health data payloads.
 
-**Description:**
-Detailed explanation of the pattern.
+## Red Flags
 
-**When to Use:**
-- Scenario 1
-- Scenario 2
-- Scenario 3
-
-**Implementation:**
-```typescript
-// Example code implementation
-export class Example {
-  // Implementation details
-}
-```
-
-**Benefits:**
-- Benefit 1
-- Benefit 2
-- Benefit 3
-
-**Trade-offs:**
-- Consider 1
-- Consider 2
-- Consider 3
-
-### Pattern 2: Advanced Technique
-
-**Description:**
-Another important pattern for senior security.
-
-**Implementation:**
-```typescript
-// Advanced example
-async function advancedExample() {
-  // Code here
-}
-```
-
-## Guidelines
-
-### Code Organization
-- Clear structure
-- Logical separation
-- Consistent naming
-- Proper documentation
-
-### Performance Considerations
-- Optimization strategies
-- Bottleneck identification
-- Monitoring approaches
-- Scaling techniques
-
-### Security Best Practices
-- Input validation
-- Authentication
-- Authorization
-- Data protection
-
-## Common Patterns
-
-### Pattern A
-Implementation details and examples.
-
-### Pattern B
-Implementation details and examples.
-
-### Pattern C
-Implementation details and examples.
-
-## Anti-Patterns to Avoid
-
-### Anti-Pattern 1
-What not to do and why.
-
-### Anti-Pattern 2
-What not to do and why.
-
-## Tools and Resources
-
-### Recommended Tools
-- Tool 1: Purpose
-- Tool 2: Purpose
-- Tool 3: Purpose
-
-### Further Reading
-- Resource 1
-- Resource 2
-- Resource 3
-
-## Conclusion
-
-Key takeaways for using this reference guide effectively.
+- Home-grown hashing, signing, key derivation, or encryption helpers.
+- Reversible encoding presented as encryption.
+- Hard-coded keys or API secrets in app config, generated files, or source.
+- Crypto changes without a server/API contract review.

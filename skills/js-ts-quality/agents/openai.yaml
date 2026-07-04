@@ -1,0 +1,4 @@
+interface:
+  display_name: "JS/TS Quality"
+  short_description: "Guide clear JS/TS coding and review"
+  default_prompt: "Use $js-ts-quality to write, refactor, or review JavaScript and TypeScript code with clear boundaries and low overengineering."

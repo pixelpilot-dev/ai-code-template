@@ -1,103 +1,18 @@
 # Security Architecture Patterns
 
-## Overview
+## Frontend And Mobile Hotspots
 
-This reference guide provides comprehensive information for senior security.
+- Authn: login, token refresh, session restore, logout, Firebase auth, OAuth callbacks.
+- Authz: role-based routes, patient/doctor access checks, tenant or organization boundaries.
+- Data exposure: logs, error messages, client state, query cache, generated API clients.
+- Inputs: forms, file uploads, route params, search params, deep links, webhooks, and external links.
+- Local persistence: secure storage, MMKV/AsyncStorage, cached health data, uploaded file metadata.
+- Native config: app schemes, permissions, entitlements, Android permissions, iOS usage descriptions.
 
-## Patterns and Practices
+## Review Pattern
 
-### Pattern 1: Best Practice Implementation
-
-**Description:**
-Detailed explanation of the pattern.
-
-**When to Use:**
-- Scenario 1
-- Scenario 2
-- Scenario 3
-
-**Implementation:**
-```typescript
-// Example code implementation
-export class Example {
-  // Implementation details
-}
-```
-
-**Benefits:**
-- Benefit 1
-- Benefit 2
-- Benefit 3
-
-**Trade-offs:**
-- Consider 1
-- Consider 2
-- Consider 3
-
-### Pattern 2: Advanced Technique
-
-**Description:**
-Another important pattern for senior security.
-
-**Implementation:**
-```typescript
-// Advanced example
-async function advancedExample() {
-  // Code here
-}
-```
-
-## Guidelines
-
-### Code Organization
-- Clear structure
-- Logical separation
-- Consistent naming
-- Proper documentation
-
-### Performance Considerations
-- Optimization strategies
-- Bottleneck identification
-- Monitoring approaches
-- Scaling techniques
-
-### Security Best Practices
-- Input validation
-- Authentication
-- Authorization
-- Data protection
-
-## Common Patterns
-
-### Pattern A
-Implementation details and examples.
-
-### Pattern B
-Implementation details and examples.
-
-### Pattern C
-Implementation details and examples.
-
-## Anti-Patterns to Avoid
-
-### Anti-Pattern 1
-What not to do and why.
-
-### Anti-Pattern 2
-What not to do and why.
-
-## Tools and Resources
-
-### Recommended Tools
-- Tool 1: Purpose
-- Tool 2: Purpose
-- Tool 3: Purpose
-
-### Further Reading
-- Resource 1
-- Resource 2
-- Resource 3
-
-## Conclusion
-
-Key takeaways for using this reference guide effectively.
+1. Identify untrusted inputs and sensitive outputs.
+2. Trace where the data is validated, authorized, stored, logged, and rendered.
+3. Check whether UI-only checks are backed by API/server enforcement.
+4. Verify logout and account switching clear sensitive cache and local state.
+5. Prefer concrete exploit paths over generic best-practice warnings.

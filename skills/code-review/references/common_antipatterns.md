@@ -1,103 +1,31 @@
 # Common Antipatterns
 
-## Overview
+## Architecture
 
-This reference guide provides comprehensive information for code reviewer.
+- Adding a generic helper for one call site.
+- Moving feature-specific logic into `shared` before there are real shared consumers.
+- Deep-importing another feature's internals instead of using its public API.
+- Putting API details, navigation, formatting, and UI state into one large component.
+- Editing generated files while leaving the generator stale.
+- Introducing abstractions for imagined future use instead of current complexity.
 
-## Patterns and Practices
+## React And State
 
-### Pattern 1: Best Practice Implementation
+- Duplicating server state in local state or Zustand.
+- Invalidating broad query groups when a specific query key is enough.
+- Creating provider-level effects that hide feature ownership.
+- Passing many boolean props where composition or separate components would be clearer.
 
-**Description:**
-Detailed explanation of the pattern.
+## React Native
 
-**When to Use:**
-- Scenario 1
-- Scenario 2
-- Scenario 3
+- Treating native config changes as JS-only changes.
+- Hiding permissions, storage, or background behavior inside UI components.
+- Adding platform-specific code without checking iOS and Android behavior.
+- Reusing web assumptions for navigation, safe areas, keyboard behavior, or gestures.
 
-**Implementation:**
-```typescript
-// Example code implementation
-export class Example {
-  // Implementation details
-}
-```
+## Review Smells
 
-**Benefits:**
-- Benefit 1
-- Benefit 2
-- Benefit 3
-
-**Trade-offs:**
-- Consider 1
-- Consider 2
-- Consider 3
-
-### Pattern 2: Advanced Technique
-
-**Description:**
-Another important pattern for code reviewer.
-
-**Implementation:**
-```typescript
-// Advanced example
-async function advancedExample() {
-  // Code here
-}
-```
-
-## Guidelines
-
-### Code Organization
-- Clear structure
-- Logical separation
-- Consistent naming
-- Proper documentation
-
-### Performance Considerations
-- Optimization strategies
-- Bottleneck identification
-- Monitoring approaches
-- Scaling techniques
-
-### Security Best Practices
-- Input validation
-- Authentication
-- Authorization
-- Data protection
-
-## Common Patterns
-
-### Pattern A
-Implementation details and examples.
-
-### Pattern B
-Implementation details and examples.
-
-### Pattern C
-Implementation details and examples.
-
-## Anti-Patterns to Avoid
-
-### Anti-Pattern 1
-What not to do and why.
-
-### Anti-Pattern 2
-What not to do and why.
-
-## Tools and Resources
-
-### Recommended Tools
-- Tool 1: Purpose
-- Tool 2: Purpose
-- Tool 3: Purpose
-
-### Further Reading
-- Resource 1
-- Resource 2
-- Resource 3
-
-## Conclusion
-
-Key takeaways for using this reference guide effectively.
+- A finding that cannot describe what breaks.
+- A style preference framed as a correctness bug.
+- A proposed fix that rewrites unrelated code.
+- A cleanup suggestion presented as mandatory without showing the maintenance risk.

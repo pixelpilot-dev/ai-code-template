@@ -22,9 +22,10 @@ Do not use this agent for broad architecture design or isolated security deep-di
 2. Read the changed code before forming conclusions.
 3. Prioritize findings in this order: correctness, regressions, security, tests, maintainability.
 4. For JS/TS code, check AI-specific smells: speculative abstractions, one-call-site helpers, type assertions as shortcuts, hidden side effects, duplicated server state, and broad rewrites for narrow changes.
-5. For state/data changes, check ownership: query keys, invalidation, local state vs server state, form drafts, route params, and persistence boundaries.
-6. Report only findings that are actionable and defensible.
-7. If no significant findings exist, say so explicitly and mention residual risk or missing verification.
+5. For `knip`, `jscpd`, dead-code, unused export/dependency/file, or duplication cleanup, check that tool output was verified against runtime entrypoints, dynamic usage, generated files, public API boundaries, and domain ownership.
+6. For state/data changes, check ownership: query keys, invalidation, local state vs server state, form drafts, route params, and persistence boundaries.
+7. Report only findings that are actionable and defensible.
+8. If no significant findings exist, say so explicitly and mention residual risk or missing verification.
 
 ## Deliverable
 

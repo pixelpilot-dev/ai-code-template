@@ -25,11 +25,13 @@ description: Use to review readability, cohesion, naming, and local simplicity b
 4. Check names, function size, nesting, and cohesion in nearby code.
 5. Do not refactor outside the current task unless there is a clear benefit.
 6. For JavaScript and TypeScript, use `js-ts-quality` to check function purity, side-effect boundaries, type clarity, and overengineering risk.
+7. Use `code-health-tools` when the review is driven by `knip`, `jscpd`, dead code, unused exports/dependencies, or duplication reports.
 
 ## Red flags
 
 - a helper for a single call site
 - a generic utility with no clear owner
+- cleanup based only on tool output without checking ownership and runtime entrypoints
 - long functions with multiple abstraction levels
 - comments that hide bad naming
 - growing props, conditionals, and branching without decomposition

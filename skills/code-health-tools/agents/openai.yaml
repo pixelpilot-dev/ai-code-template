@@ -1,0 +1,4 @@
+interface:
+  display_name: "Code Health Tools"
+  short_description: "Use knip and jscpd safely"
+  default_prompt: "Use $code-health-tools to review dead code and duplication signals before cleanup."

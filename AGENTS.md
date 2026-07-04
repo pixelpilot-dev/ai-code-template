@@ -72,6 +72,7 @@ When using superpowers review-process skills, keep the process from superpowers 
 - For JavaScript and TypeScript writing, refactoring, or review, use `js-ts-quality` to calibrate AI behavior around readability, pure functions, side-effect boundaries, type clarity, and avoiding overengineering.
 - For bugs and unexpected behavior, use `debugging-quality` so fixes trace the root cause before editing.
 - For queries, mutations, forms, cache, route params, local state, global state, or persistence, use `state-data-quality` to clarify ownership before editing.
+- For code health cleanup involving dead code, unused files, unused exports, unused dependencies, copy-paste detection, duplication, `knip`, `jscpd`, or dry refactoring, use `code-health-tools`. Treat tool output as evidence to investigate, not as permission to delete or abstract code blindly.
 - For non-trivial implementation work, use `superpowers:brainstorming` first.
 - Use `superpowers:writing-plans` for multi-step implementation when planning will materially reduce risk or rework.
 - Do not write tests by default. Add new tests only when the user explicitly asks for them.

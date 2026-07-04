@@ -31,6 +31,7 @@ Verify the actual risk introduced by the change, not every possible risk in the 
 | --- | --- |
 | Skill or agent instructions | `quick_validate.py <skill-dir>` for new/changed skills, plus a placeholder scan across changed files |
 | Docs only | Link/path sanity check with `rg` or render-specific tooling if the format needs rendering |
+| Code health cleanup | Prefer repo scripts such as `yarn quality:deps`, `yarn quality:deps:strict`, `yarn quality:duplicates`, then `yarn quality:base`; otherwise re-run the same `knip` or `jscpd` command on the touched scope and the narrowest lint/typecheck/build command |
 | Local TypeScript utility | Typecheck when available; otherwise lint or the narrowest build script |
 | React component or hook | `lint` plus `typecheck` when available |
 | React route or app provider | `typecheck`; add route generation/build if the router requires generated output |

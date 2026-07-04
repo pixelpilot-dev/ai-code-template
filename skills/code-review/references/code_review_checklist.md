@@ -19,6 +19,8 @@ Use this as a risk checklist, not as a template for long review notes.
 - Route files and screens should stay thin when the repo has feature/widget layers.
 - Shared UI should remain domain-agnostic.
 - Generated files should not be edited by hand unless generation is unavailable and the reason is stated.
+- Knip or jscpd output should be treated as evidence to investigate, not as proof that code can be deleted or abstracted.
+- Dead-code cleanup should check dynamic imports, route conventions, generated files, package scripts, and public exports before removal.
 
 ## Review Output
 

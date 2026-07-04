@@ -28,8 +28,9 @@ Quickly determine which skills are actually needed for the current task and avoi
 9. For React, Vite, Expo, or React Native repositories that resemble the personal frontend architecture, use `repo-context` before choosing files or commands.
 10. For JavaScript and TypeScript writing, refactoring, or review, use `js-ts-quality` to keep code clear, typed, locally coherent, and free of speculative abstractions.
 11. For queries, mutations, forms, cache, route params, local state, global state, or persistence, use `state-data-quality` to clarify data ownership before editing.
-12. Use `verification-profile` to choose a minimal verification command before claiming code, config, docs, or skill changes are complete.
-13. Use domain skills only after process skills and only when they materially help in the current context.
+12. For dead code, unused files, unused exports, unused dependencies, copy-paste detection, duplication cleanup, `knip`, `jscpd`, or dry refactoring, use `code-health-tools`.
+13. Use `verification-profile` to choose a minimal verification command before claiming code, config, docs, or skill changes are complete.
+14. Use domain skills only after process skills and only when they materially help in the current context.
 
 ## Priority
 

@@ -19,6 +19,7 @@ description: Use as the local review quality bar and findings format, while the 
 - Use `superpowers:receiving-code-review` when handling review feedback.
 - Use this skill as the local standard for what a good review should look like.
 - For JavaScript and TypeScript code review, use `js-ts-quality` to calibrate readability, type safety, side effects, and overengineering.
+- For dead code, unused dependency/export/file, duplication, `knip`, or `jscpd` review, use `code-health-tools`.
 - For state, cache, forms, or data ownership review, use `state-data-quality`.
 - For React, Next.js, and UI code review, consult `vercel-react-best-practices` and `vercel-composition-patterns`.
 - Add `vercel-react-view-transitions` when reviewing transitions or motion behavior.
@@ -51,5 +52,6 @@ description: Use as the local review quality bar and findings format, while the 
 - `skills/code-review/references/common_antipatterns.md`
 - `skills/code-review/references/coding_standards.md`
 - `skills/js-ts-quality/references/reviewing-ai-code.md`
+- `skills/code-health-tools/SKILL.md`
 - `skills/state-data-quality/references/server-state.md`
 - `skills/state-data-quality/references/client-state.md`

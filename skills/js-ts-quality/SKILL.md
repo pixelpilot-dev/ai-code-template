@@ -16,9 +16,10 @@ Make AI-written JavaScript and TypeScript look like careful human code: small, c
    - `references/writing-code.md` when writing or changing JS/TS code.
    - `references/refactoring.md` when simplifying or restructuring code.
    - `references/reviewing-ai-code.md` when reviewing a diff or AI-generated code.
-3. Prefer existing local patterns, naming, helpers, and data boundaries over a new personal style.
-4. Keep the change smaller than the surrounding problem unless the user explicitly asks for broader cleanup.
-5. Use `verification-profile` before claiming the work is complete.
+3. Use `code-health-tools` when the work is driven by `knip`, `jscpd`, dead code, unused exports, unused dependencies, or duplication cleanup.
+4. Prefer existing local patterns, naming, helpers, and data boundaries over a new personal style.
+5. Keep the change smaller than the surrounding problem unless the user explicitly asks for broader cleanup.
+6. Use `verification-profile` before claiming the work is complete.
 
 ## Default Behavior
 
@@ -29,6 +30,7 @@ Make AI-written JavaScript and TypeScript look like careful human code: small, c
 - Make invalid states hard to represent when that is local and cheap.
 - Avoid broad refactors while fixing narrow bugs.
 - Leave the codebase more predictable, not just more abstract.
+- Treat code-health tool output as a signal that requires reading the owning code path.
 
 ## Refusal Points
 
@@ -40,3 +42,5 @@ Do not introduce:
 - `any`, type assertions, or non-null assertions as shortcuts
 - comments that explain confusing code instead of making the code clearer
 - large rewrites that are not needed for the current task
+- deletions based only on `knip` output without checking entrypoints and dynamic usage
+- abstractions based only on `jscpd` output without proving shared domain meaning

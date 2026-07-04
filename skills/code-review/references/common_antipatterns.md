@@ -8,6 +8,7 @@
 - Putting API details, navigation, formatting, and UI state into one large component.
 - Editing generated files while leaving the generator stale.
 - Introducing abstractions for imagined future use instead of current complexity.
+- Turning jscpd clone output into shared utilities without proving shared domain ownership.
 
 ## React And State
 
@@ -29,3 +30,4 @@
 - A style preference framed as a correctness bug.
 - A proposed fix that rewrites unrelated code.
 - A cleanup suggestion presented as mandatory without showing the maintenance risk.
+- A dead-code finding based only on Knip output without checking framework entrypoints or dynamic usage.

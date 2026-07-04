@@ -17,6 +17,14 @@ Verify the actual risk introduced by the change, not every possible risk in the 
 4. If the ideal command is unavailable or too expensive, choose the closest available command and state the residual risk.
 5. Do not create new tests by default. Run existing tests only when they already cover the touched behavior or the user asked for tests.
 
+## Risk Tiers
+
+| Risk | Typical changes | Verification posture |
+| --- | --- | --- |
+| Low | docs, comments, local copy, isolated styling, non-behavioral skill text | placeholder/link sanity or lint only when relevant |
+| Medium | JS/TS utility, component, hook, query, mutation, form, route params, generated client adapter | typecheck/lint plus a targeted existing test or smoke path when available |
+| High | auth, permissions, storage, native config, app bootstrap, routing guards, build config, API contract, data migration | run the strongest available project command and state any unverified runtime/platform risk |
+
 ## Profiles
 
 | Change type | Minimal verification |

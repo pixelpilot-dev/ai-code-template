@@ -1,0 +1,4 @@
+interface:
+  display_name: "Debugging Quality"
+  short_description: "Guide root-cause bug fixing"
+  default_prompt: "Use $debugging-quality to investigate and fix this bug by tracing the root cause before changing code."

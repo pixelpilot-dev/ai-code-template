@@ -14,6 +14,8 @@ Use this as a risk checklist, not as a template for long review notes.
 
 - Data fetching should keep server state in TanStack Query or the repo's existing data layer.
 - Mutations should invalidate or update the specific affected cache entries.
+- Query keys should include every variable that changes returned data.
+- Local state should not mirror server data unless it is an explicit user-editable draft.
 - Route files and screens should stay thin when the repo has feature/widget layers.
 - Shared UI should remain domain-agnostic.
 - Generated files should not be edited by hand unless generation is unavailable and the reason is stated.

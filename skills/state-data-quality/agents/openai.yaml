@@ -1,0 +1,4 @@
+interface:
+  display_name: "State Data Quality"
+  short_description: "Clarify frontend data ownership"
+  default_prompt: "Use $state-data-quality to decide ownership for server state, client state, forms, cache, and data mapping."

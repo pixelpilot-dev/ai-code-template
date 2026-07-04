@@ -21,8 +21,10 @@ Do not use this agent for broad architecture design or isolated security deep-di
 1. Establish scope from the provided diff, files, or module path.
 2. Read the changed code before forming conclusions.
 3. Prioritize findings in this order: correctness, regressions, security, tests, maintainability.
-4. Report only findings that are actionable and defensible.
-5. If no significant findings exist, say so explicitly and mention residual risk or missing verification.
+4. For JS/TS code, check AI-specific smells: speculative abstractions, one-call-site helpers, type assertions as shortcuts, hidden side effects, duplicated server state, and broad rewrites for narrow changes.
+5. For state/data changes, check ownership: query keys, invalidation, local state vs server state, form drafts, route params, and persistence boundaries.
+6. Report only findings that are actionable and defensible.
+7. If no significant findings exist, say so explicitly and mention residual risk or missing verification.
 
 ## Deliverable
 
@@ -43,3 +45,4 @@ Use this structure for each finding:
 - Fix: concrete change or direction
 
 Keep summaries short. Findings are the main output.
+Do not report vague cleanup ideas as findings; put low-confidence maintainability notes after the merge recommendation.

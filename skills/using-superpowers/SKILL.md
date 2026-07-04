@@ -20,15 +20,16 @@ Quickly determine which skills are actually needed for the current task and avoi
 1. First check whether a process skill is needed.
 2. If the task is about new functionality, behavior changes, or a noticeable rework, start with `superpowers:brainstorming`.
 3. If the work becomes multi-step after the design is aligned, use `superpowers:writing-plans`.
-4. If the task is about a bug or unexpected behavior, start with `systematic-debugging` if it is available.
+4. If the task is about a bug or unexpected behavior, start with `systematic-debugging` if it is available, and use `debugging-quality` to avoid patching symptoms.
 5. If a substantial implementation step is complete and needs review, use the process from `superpowers:requesting-code-review`, but keep the reviewer local: `agents/code-reviewer.md`.
 6. If you are receiving review feedback, use `superpowers:receiving-code-review`.
 7. If the task is complete and you are about to claim it is done, use `superpowers:verification-before-completion`.
 8. For React, Next.js, and UI implementation or review, prefer external Vercel skills from `~/.agents/skills`: `vercel-react-best-practices`, `vercel-composition-patterns`, and `vercel-react-view-transitions` when relevant.
 9. For React, Vite, Expo, or React Native repositories that resemble the personal frontend architecture, use `repo-context` before choosing files or commands.
 10. For JavaScript and TypeScript writing, refactoring, or review, use `js-ts-quality` to keep code clear, typed, locally coherent, and free of speculative abstractions.
-11. Use `verification-profile` to choose a minimal verification command before claiming code, config, docs, or skill changes are complete.
-12. Use domain skills only after process skills and only when they materially help in the current context.
+11. For queries, mutations, forms, cache, route params, local state, global state, or persistence, use `state-data-quality` to clarify data ownership before editing.
+12. Use `verification-profile` to choose a minimal verification command before claiming code, config, docs, or skill changes are complete.
+13. Use domain skills only after process skills and only when they materially help in the current context.
 
 ## Priority
 
